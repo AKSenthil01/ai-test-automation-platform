@@ -1,0 +1,83 @@
+BACnet MS/TP Troubleshooting Guide
+
+BACnet MS/TP networks use token passing communication between master nodes.
+Communication reliability depends on correct wiring and configuration.
+
+Common Troubleshooting Scenarios
+
+1. Device Not Appearing On Network
+
+Possible Causes:
+
+* Incorrect MAC address configuration
+* Device power failure
+* Broken RS485 wiring
+
+Recommended Checks:
+
+* Verify device power
+* Confirm MAC address range (0-127)
+* Inspect communication cable
+
+---
+
+2. Token Passing Failure
+
+Symptoms:
+
+* Network communication stops
+* Devices become unreachable
+
+Possible Causes:
+
+* Duplicate MAC addresses
+* MAX_MASTER configured incorrectly
+* Wiring discontinuity
+
+Recommended Checks:
+
+* Verify MAC address uniqueness
+* Check MAX_MASTER configuration
+* Inspect cable continuity
+
+---
+
+3. Intermittent Communication
+
+Symptoms:
+
+* Devices appear and disappear from network
+* Frequent timeouts
+
+Possible Causes:
+
+* Electrical noise
+* Improper cable shielding
+* Missing termination resistors
+
+Recommended Checks:
+
+* Install proper RS485 shielded cable
+* Verify end-of-line termination
+* Reduce network cable length
+
+---
+
+4. High Frame Error Rate
+
+Symptoms:
+
+* CRC errors
+* Invalid frames detected
+
+Possible Causes:
+
+* Incorrect baud rate
+* Signal reflection due to missing termination
+* Ground potential differences
+
+Recommended Checks:
+
+* Verify baud rate configuration
+* Ensure proper grounding
+* Check termination resistors

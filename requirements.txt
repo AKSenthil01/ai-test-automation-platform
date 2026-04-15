@@ -1,0 +1,17 @@
+langchain
+langchain-community
+openai
+tiktoken
+faiss-cpu
+pypdf
+python-dotenv
+streamlit
+pymodbus
+prometheus-client
+pandas
+numpy
+python-dotenv
+loguru
+langchain-ollama
+plotly
+langchain-text-splitters

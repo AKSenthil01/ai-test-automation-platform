@@ -1,0 +1,64 @@
+BACnet MS/TP Protocol Troubleshooting Guide
+
+BACnet MS/TP (Master-Slave Token Passing) is a serial communication protocol
+commonly used in building automation systems.
+
+Physical Layer:
+
+* Communication typically uses RS-485 wiring.
+* Recommended wiring is daisy chain topology.
+* End-of-line (EOL) termination resistors must be installed at both ends of the network.
+
+Common Communication Parameters:
+
+* Baud Rate: 9600, 19200, 38400, 76800
+* Data Bits: 8
+* Parity: None
+* Stop Bits: 1
+
+Important Configuration Parameters:
+
+MAC Address
+Each device must have a unique MAC address between 0 and 127.
+Duplicate MAC addresses will cause token passing failure.
+
+MAX_MASTER
+Defines the highest master node address.
+If configured too high, token rotation time increases.
+
+MAX_INFO_FRAMES
+Defines the maximum number of frames a master can send before passing the token.
+
+Common BACnet MS/TP Communication Issues:
+
+1. Token Loss
+   Occurs when token frame is not received by next device.
+   Possible causes:
+
+* Loose wiring
+* Noise in RS485 line
+* Incorrect baud rate
+
+2. Duplicate MAC Address
+   Symptoms:
+
+* Devices randomly dropping off network
+* Intermittent communication failure
+
+3. Incorrect Baud Rate
+   All devices must use the same baud rate.
+   Mismatch leads to communication failure.
+
+4. Missing End Of Line Termination
+   Symptoms:
+
+* CRC errors
+* Frame corruption
+
+Recommended Troubleshooting Steps:
+
+1. Verify physical wiring
+2. Confirm termination resistors
+3. Check baud rate configuration
+4. Ensure MAC addresses are unique
+5. Capture traffic using Wireshark or protocol analyzer

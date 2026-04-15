@@ -1,0 +1,57 @@
+Refrigeration Controller Overview
+
+The refrigeration controller manages compressor operation,
+fan control, defrost cycles, and safety protection mechanisms.
+
+Main Components Controlled
+
+1. Compressor
+   Controls refrigeration cycle by compressing refrigerant gas.
+
+2. Evaporator Fan
+   Maintains airflow across evaporator coil.
+
+3. Condenser Fan
+   Dissipates heat from condenser.
+
+4. Temperature Sensors
+   Monitor evaporator temperature and ambient temperature.
+
+---
+
+Controller Operating Modes
+
+Cooling Mode
+Compressor runs to maintain target temperature.
+
+Defrost Mode
+Controller temporarily stops cooling to remove frost
+from evaporator coil.
+
+Alarm Mode
+Activated when abnormal conditions occur.
+
+---
+
+Safety Protections
+
+High Discharge Temperature Protection
+Compressor shuts down if discharge temperature exceeds limit.
+
+Low Suction Pressure Protection
+Prevents compressor damage due to refrigerant loss.
+
+Sensor Failure Protection
+Controller enters safe mode if sensor input is invalid.
+
+---
+
+Communication Interfaces
+
+BACnet MS/TP
+Used for building automation system integration.
+
+Modbus RTU
+Used for monitoring and configuration.
+
+Controller logs all major events and faults for diagnostics.

@@ -1,0 +1,82 @@
+Controller Modbus Register Map
+
+The following registers are used by the refrigeration controller
+for monitoring and control.
+
+Holding Registers
+
+Register 30001
+Evaporator Temperature
+
+Description:
+Current temperature measured at evaporator coil.
+
+Unit:
+Degrees Celsius
+
+---
+
+Register 30002
+Suction Pressure
+
+Description:
+Current suction pressure of compressor.
+
+Unit:
+Bar
+
+---
+
+Register 30003
+Discharge Temperature
+
+Description:
+Temperature measured at compressor discharge.
+
+Unit:
+Degrees Celsius
+
+---
+
+Register 30004
+Compressor Status
+
+Values:
+0 = OFF
+1 = ON
+
+---
+
+Register 30005
+Defrost Mode Status
+
+Values:
+0 = Normal Cooling
+1 = Defrost Active
+
+---
+
+Register 30006
+Alarm Status
+
+Values:
+0 = No Alarm
+1 = Active Alarm
+
+---
+
+Register 30007
+A2L Leak Detection Status
+
+Values:
+0 = No Leak
+1 = Leak Detected
+
+---
+
+Register 30008
+Fan Status
+
+Values:
+0 = OFF
+1 = ON

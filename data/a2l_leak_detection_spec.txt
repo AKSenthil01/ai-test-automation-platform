@@ -1,0 +1,60 @@
+A2L Refrigerant Leak Detection Specification
+
+A2L refrigerants are mildly flammable and require leak detection
+for safety compliance.
+
+Leak Detection System
+
+The controller continuously monitors signals from gas sensors.
+
+Sensors detect refrigerant concentration in the environment.
+
+---
+
+Normal Operation
+
+Sensor readings remain below safety threshold.
+
+Controller continues normal operation.
+
+---
+
+Leak Detection Condition
+
+Leak alarm triggers when refrigerant concentration
+exceeds configured safety limit.
+
+Typical threshold:
+25% of Lower Flammability Limit (LFL)
+
+---
+
+Controller Response To Leak
+
+When leak detected:
+
+1. Compressor shuts down immediately
+2. Fans activate to ventilate area
+3. Alarm status activated
+4. Event logged in controller memory
+
+---
+
+Reset Condition
+
+System can return to normal operation when:
+
+1. Gas concentration drops below safe limit
+2. Manual reset performed by technician
+
+---
+
+Possible Fault Conditions
+
+False leak detection may occur due to:
+
+* Sensor drift
+* Electrical noise
+* Sensor calibration error
+
+Regular sensor calibration recommended.

@@ -1,0 +1,72 @@
+Modbus RTU Communication Reference
+
+Modbus RTU is a serial communication protocol widely used in industrial
+automation and controller systems.
+
+Physical Layer:
+
+* Uses RS485 differential signaling
+* Supports multiple slave devices on the same bus
+
+Communication Settings:
+
+* Baud Rate: 9600, 19200, 38400
+* Data Bits: 8
+* Parity: Even / None
+* Stop Bits: 1
+
+Modbus Device Roles:
+
+Master
+The master initiates all communication requests.
+
+Slave
+Slave devices respond to master requests.
+
+Common Function Codes:
+
+Function Code 01
+Read Coil Status
+
+Function Code 03
+Read Holding Registers
+
+Function Code 04
+Read Input Registers
+
+Function Code 06
+Write Single Register
+
+Function Code 16
+Write Multiple Registers
+
+Typical Modbus Communication Errors:
+
+1. Timeout Error
+   Occurs when slave does not respond within expected time.
+
+Possible causes:
+
+* Incorrect slave address
+* Device powered off
+* Broken RS485 connection
+
+2. CRC Error
+   Indicates corrupted frame during transmission.
+
+Possible causes:
+
+* Electrical noise
+* Improper cable shielding
+* Long cable distance
+
+3. Illegal Function Code
+   Slave device does not support requested function.
+
+Troubleshooting Steps:
+
+1. Verify slave address configuration
+2. Check wiring polarity (A/B lines)
+3. Confirm baud rate and parity settings
+4. Inspect CRC error rate
+5. Use Modbus polling software for diagnostics

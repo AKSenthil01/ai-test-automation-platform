@@ -1,0 +1,82 @@
+Controller Error Code Reference Guide
+
+This document describes common error codes observed in refrigeration
+controllers and HVAC systems.
+
+Error Code 10
+Sensor Failure
+
+Description:
+Temperature sensor is open circuit or shorted.
+
+Possible Causes:
+
+* Damaged sensor wiring
+* Loose connector
+* Sensor out of range
+
+Recommended Checks:
+
+* Inspect sensor wiring
+* Measure resistance
+* Replace faulty sensor
+
+---
+
+Error Code 21
+Low Suction Pressure
+
+Description:
+Compressor suction pressure below safe operating limit.
+
+Possible Causes:
+
+* Refrigerant leak
+* Blocked evaporator
+* Faulty pressure sensor
+
+Recommended Checks:
+
+* Verify refrigerant level
+* Inspect evaporator airflow
+* Check pressure sensor calibration
+
+---
+
+Error Code 37
+Communication Timeout
+
+Description:
+Controller did not receive response from network device.
+
+Possible Causes:
+
+* BACnet MS/TP token loss
+* Modbus slave not responding
+* Incorrect device address
+
+Recommended Checks:
+
+* Verify network wiring
+* Confirm device addresses
+* Check communication baud rate
+
+---
+
+Error Code 45
+High Discharge Temperature
+
+Description:
+Compressor discharge temperature exceeds safe limit.
+
+Possible Causes:
+
+* Overloaded compressor
+* Blocked condenser
+* Cooling fan failure
+
+Recommended Checks:
+
+* Inspect condenser coil
+* Verify fan operation
+* Check compressor load

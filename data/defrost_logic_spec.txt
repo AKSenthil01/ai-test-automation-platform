@@ -1,0 +1,59 @@
+Defrost Control Logic Specification
+
+The defrost system removes ice buildup from the evaporator coil.
+
+Defrost Trigger Conditions
+
+Defrost cycle can start when:
+
+1. Compressor runtime exceeds configured threshold
+2. Evaporator temperature remains below freezing for long duration
+3. Scheduled defrost timer expires
+
+---
+
+Defrost Sequence
+
+Step 1
+Controller stops compressor.
+
+Step 2
+Evaporator fan stops.
+
+Step 3
+Defrost heater activates.
+
+Step 4
+Ice melts from evaporator coil.
+
+---
+
+Defrost Termination Conditions
+
+Defrost cycle stops when:
+
+1. Evaporator temperature exceeds termination threshold
+2. Maximum defrost time is reached
+
+---
+
+Post Defrost Recovery
+
+After defrost completion:
+
+1. Heater turns off
+2. System waits for drip delay
+3. Compressor restarts
+4. Cooling resumes
+
+---
+
+Defrost Failure Conditions
+
+Possible causes of defrost failure:
+
+* Heater malfunction
+* Temperature sensor failure
+* Incorrect defrost timing configuration
+
+Controller generates alarm if defrost does not terminate properly.
