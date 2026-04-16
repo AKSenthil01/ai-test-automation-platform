@@ -6,7 +6,7 @@ faiss-cpu
 pypdf
 python-dotenv
 streamlit
-pymodbus
+pymodbus==2.5.3
 prometheus-client
 pandas
 numpy
