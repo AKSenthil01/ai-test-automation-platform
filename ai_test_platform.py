@@ -69,6 +69,13 @@ if "test_cases" in st.session_state:
             else:
                 # Step 2: Generate pytest code
                 code = generate_pytest_fast(input_file)
+                # ✅ SAVE FILE TO DISK
+                os.makedirs("tests", exist_ok=True)
+
+                # with open("tests/test_ai_fast.py", "w") as f:
+                #     f.write(code)
+                with open("tests/test_ai_fast.py", "w", encoding="utf-8") as f:
+                    f.write(code)
 
                 # Step 3: Store in session
                 st.session_state["pytest_code"] = code
