@@ -28,4 +28,4 @@ Analyze Failures
 📌 Use Case
 Industrial automation testing (HVAC, Refrigeration controllers, BACnet/Modbus systems)
 
-![CI](https://github.com/<username>/ai-test-automation-platform/actions/workflows/ci.yml/badge.svg)
+
