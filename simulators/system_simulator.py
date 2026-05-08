@@ -99,36 +99,6 @@ def simulate_bacnet():
 # ---------------------------------------------
 # MAIN SYSTEM SIMULATOR
 # ---------------------------------------------
-# def generate_logs():
-#
-#     logs = []
-#
-#     # Run multiple cycles (like real system)
-#     for _ in range(5):
-#
-#         logs.extend(simulate_controller())
-#         logs.extend(simulate_defrost())
-#         logs.extend(simulate_a2l())
-#         logs.extend(simulate_modbus())
-#         logs.extend(simulate_bacnet())
-#
-#         time.sleep(0.1)  # simulate time gap
-#
-#     return "\n".join(logs)
-
-# def generate_logs():
-#
-#     logs = []
-#
-#     for _ in range(2):   # 🔥 reduced cycles
-#
-#         logs.extend(simulate_controller())
-#         logs.extend(simulate_defrost())
-#         logs.extend(simulate_a2l())
-#         logs.extend(simulate_modbus())
-#         logs.extend(simulate_bacnet())
-#
-#     return "\n".join(logs)
 def generate_logs_fast():
     logs = []
 

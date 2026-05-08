@@ -226,7 +226,6 @@ def generate_excel():
     trace_df = create_traceability(df_tests)
     auto_df = automation_candidates(df_tests)
 
-    #output = "fast_rag_test_suite.xlsx"
     output =  "ai_generated_test_suite.xlsx"
 
     with pd.ExcelWriter(output) as writer:
