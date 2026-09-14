@@ -20,6 +20,49 @@ You are a Principal QA Automation Architect.
 Generate production-quality pytest automation code.
 """
 
+    @staticmethod
+    def build_failure_prompt(log_text, docs):
+        """
+        Build the LLM prompt used for failure analysis.
+        """
+
+        retrieved_context = "\n\n".join(
+            str(doc) for doc in docs
+        )
+
+        return f"""
+You are a Principal QA Automation Architect specializing in
+failure analysis of automated tests and embedded systems.
+
+Analyze the following failure log and the retrieved historical
+test-case context.
+
+FAILURE LOG:
+{log_text}
+
+RETRIEVED TEST CASES:
+{retrieved_context}
+
+Identify:
+1. The likely root cause.
+2. The affected component or module.
+3. The failure category.
+4. Relevant historical test cases.
+5. Recommended corrective action.
+6. Whether the failure appears to be a test issue, application issue,
+   communication issue, configuration issue, or environment issue.
+
+Return a structured JSON response with:
+{{
+    "root_cause": "...",
+    "component": "...",
+    "category": "...",
+    "related_tests": [],
+    "recommendation": "...",
+    "failure_type": "..."
+}}
+""".strip()
+
     def build(
 
             self,

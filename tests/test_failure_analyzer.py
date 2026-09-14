@@ -1,24 +1,19 @@
 from ai_engine.failure_analyzer import FailureAnalyzer
 
-log = """
-BACnet communication timeout.
 
-Temperature sensor failed.
+def test_failure_analyzer():
+    log = """
+    BACnet communication timeout.
 
-Compressor restarted unexpectedly.
+    Temperature sensor failed.
 
-Controller generated alarm.
+    Compressor restarted unexpectedly.
 
-"""
+    Controller generated alarm.
+    """
 
-analyzer = FailureAnalyzer()
+    analyzer = FailureAnalyzer()
 
-result = analyzer.analyze(log)
+    result = analyzer.analyze(log)
 
-print("\n")
-
-print("=" * 80)
-
-print(result)
-
-print("=" * 80)
+    assert result is not None
