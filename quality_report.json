@@ -1,0 +1,33 @@
+{
+    "timestamp": "2026-06-29 23:35:43.425781",
+    "requirement": "Verify A2L leak alarm during compressor startup",
+    "generation_time": 444.82,
+    "knowledge_docs": 1651,
+    "selected_apis": [
+        "configure_controller",
+        "disable_a2l_detection",
+        "enable_a2l_detection",
+        "get_compressor_status",
+        "reset_controller",
+        "simulate_refrigerant_leak",
+        "start_compressor",
+        "stop_compressor",
+        "verify_a2l_alarm",
+        "verify_alarm"
+    ],
+    "syntax": true,
+    "allowed_api_check": false,
+    "hallucination_check": false,
+    "review_pass": false,
+    "iterations": 1,
+    "score": 40,
+    "grade": "FAIL",
+    "ready": false,
+    "review_comments": [],
+    "hallucinations": [
+        "Forbidden import : controller"
+    ],
+    "invalid_apis": [
+        "setup"
+    ]
+}
