@@ -30,6 +30,10 @@ jobs:
           mkdir -p logs
           python -c "from simulators.system_simulator import generate_logs_fast; open('logs/system.log','w').write(generate_logs_fast())"
 
+      - name: Validate generated test workbook
+        run: |
+            python -c "from validation.validator import validate_workbook; validate_workbook('generated_tests_interview_ready_50.xlsx')"
+
       - name: Run tests
         run: |
           pytest tests/ -v
