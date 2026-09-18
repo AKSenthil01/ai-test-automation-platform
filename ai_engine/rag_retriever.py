@@ -1,14 +1,12 @@
 from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+from ai_engine.embeddings import EmbeddingManager
 
 
 class RAGRetriever:
 
     def __init__(self):
 
-        embedding = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
+        embedding = EmbeddingManager().embedding
 
         self.db = FAISS.load_local(
             "vector_db",
