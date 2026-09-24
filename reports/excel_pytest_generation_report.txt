@@ -1,62 +1,17 @@
-Excel to Pytest Generation Report
-============================================================
+Excel -> Pytest Generation Report
+========================================
+Workbook: generated_tests.xlsx
+Automation rows: 5
+Generated pytest tests: 3
+Skipped/unsupported: 2
 
-Workbook: C:\Users\Senthil\PycharmProjects\ai-test-automation-platform\generated_tests_interview_ready_50.xlsx
-Generated file: C:\Users\Senthil\PycharmProjects\ai-test-automation-platform\tests\generated\test_generated_from_excel.py
+Generated capability mappings:
+----------------------------------------
+  TC_AI_002 | high_discharge_temperature | set_high_discharge_temperature | Controller enters high discharge temperature protection mode when temperature exceeds 120°C
+  TC_AI_003 | high_discharge_temperature | set_high_discharge_temperature | Compressor shutdown due to high discharge temperature
+  TC_AI_004 | low_suction_pressure | set_low_suction_pressure | Alarm activation due to low suction pressure
 
-Total workbook cases: 47
-Generated tests: 12
-Skipped tests: 35
-
-Generated Test Cases
-------------------------------------------------------------
-TC_AI_003 | Immediate compressor shutdown after leak detection
-TC_AI_004 | Fan activation for ventilation after leak detection
-TC_AI_006 | Leak event logging in controller memory
-TC_AI_008 | Manual technician reset after leak condition clears
-TC_AI_017 | Alarm mode activation when an abnormal condition occurs
-TC_AI_018 | Low suction pressure protection preventing compressor damage from refrigerant loss
-TC_AI_020 | Controller entering safe mode after invalid sensor input
-TC_AI_027 | High Discharge Temperature Protection causing Compressor Shutdown
-TC_AI_032 | Compressor status value 0
-TC_AI_035 | Alarm status value 0
-TC_AI_038 | A2L leak status value 0
-TC_AI_039 | A2L leak status value 1
-
-Skipped Test Cases
-------------------------------------------------------------
-TC_AI_001 | Normal operation with refrigerant concentration below the configured safety threshold | Scenario is not currently supported by the deterministic simulator
-TC_AI_002 | Leak alarm when refrigerant concentration exceeds 25% of LFL | Scenario is not currently supported by the deterministic simulator
-TC_AI_005 | Alarm status activation after leak detection | Scenario is not currently supported by the deterministic simulator
-TC_AI_007 | Recovery when gas concentration drops below the safe limit | Scenario is not currently supported by the deterministic simulator
-TC_AI_009 | Sensor drift causing false leak detection | Scenario is not currently supported by the deterministic simulator
-TC_AI_010 | Electrical noise causing false leak detection | Scenario is not currently supported by the deterministic simulator
-TC_AI_011 | Sensor calibration error causing false leak detection | Scenario is not currently supported by the deterministic simulator
-TC_AI_012 | Regular sensor calibration as a preventive control | Scenario is not currently supported by the deterministic simulator
-TC_AI_013 | A2L refrigerant safety monitoring | Scenario is not currently supported by the deterministic simulator
-TC_AI_014 | Continuous gas sensor monitoring | Scenario is not currently supported by the deterministic simulator
-TC_AI_015 | Safety response sequence after detected leak | Scenario is not currently supported by the deterministic simulator
-TC_AI_016 | Cooling mode compressor operation | Scenario is not currently supported by the deterministic simulator
-TC_AI_019 | Sensor failure protection when sensor input is invalid | Scenario is not currently supported by the deterministic simulator
-TC_AI_021 | Evaporator fan maintaining airflow across the evaporator coil | Scenario is not currently supported by the deterministic simulator
-TC_AI_022 | Condenser fan dissipating heat from the condenser | Scenario is not currently supported by the deterministic simulator
-TC_AI_023 | Evaporator temperature sensor monitoring | Scenario is not currently supported by the deterministic simulator
-TC_AI_024 | Ambient temperature sensor monitoring | Scenario is not currently supported by the deterministic simulator
-TC_AI_025 | Controller logging major events | Scenario is not currently supported by the deterministic simulator
-TC_AI_026 | Controller logging faults for diagnostics | Scenario is not currently supported by the deterministic simulator
-TC_AI_028 | Reading evaporator temperature from register 30001 | Scenario is not currently supported by the deterministic simulator
-TC_AI_029 | Reading suction pressure from register 30002 | Scenario is not currently supported by the deterministic simulator
-TC_AI_030 | Reading discharge temperature from register 30003 | Scenario is not currently supported by the deterministic simulator
-TC_AI_031 | Reading compressor status from register 30004 | Scenario is not currently supported by the deterministic simulator
-TC_AI_033 | Compressor status value 1 | Scenario is not currently supported by the deterministic simulator
-TC_AI_034 | Reading alarm status from register 30006 | Scenario is not currently supported by the deterministic simulator
-TC_AI_036 | Alarm status value 1 | Scenario is not currently supported by the deterministic simulator
-TC_AI_037 | Reading A2L leak status from register 30007 | Scenario is not currently supported by the deterministic simulator
-TC_AI_040 | Compressor runs to maintain target temperature | Scenario is not currently supported by the deterministic simulator
-TC_AI_041 | Compressor shuts down due to high discharge temperature | Scenario is not currently supported by the deterministic simulator
-TC_AI_042 | Controller prevents compressor damage due to low suction pressure | Scenario is not currently supported by the deterministic simulator
-TC_AI_043 | Evaporator fan runs to maintain airflow | Scenario is not currently supported by the deterministic simulator
-TC_AI_044 | Fans activate to ventilate area during A2L leak | Scenario is not currently supported by the deterministic simulator
-TC_AI_045 | Condenser fan runs to dissipate heat | Scenario is not currently supported by the deterministic simulator
-TC_AI_046 | BACnet MS/TP building automation integration | Scenario is not currently supported by the deterministic simulator
-TC_AI_047 | Controller monitoring through BACnet MS/TP | Scenario is not currently supported by the deterministic simulator
+Skipped/unsupported:
+----------------------------------------
+  TC_AI_001 | No approved simulator capability matches the scenario
+  TC_AI_005 | No approved simulator capability matches the scenario
