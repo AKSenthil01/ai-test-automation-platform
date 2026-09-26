@@ -1,0 +1,17 @@
+Excel -> Pytest Generation Report
+========================================
+Workbook: generated_tests.xlsx
+Automation rows: 5
+Generated pytest tests: 3
+Skipped/unsupported: 2
+
+Generated capability mappings:
+----------------------------------------
+  TC_AI_002 | high_discharge_temperature | set_high_discharge_temperature | Controller enters high discharge temperature protection mode when temperature exceeds 120°C
+  TC_AI_003 | high_discharge_temperature | set_high_discharge_temperature | Compressor shutdown due to high discharge temperature
+  TC_AI_004 | low_suction_pressure | set_low_suction_pressure | Alarm activation due to low suction pressure
+
+Skipped/unsupported:
+----------------------------------------
+  TC_AI_001 | No approved simulator capability matches the scenario
+  TC_AI_005 | No approved simulator capability matches the scenario
