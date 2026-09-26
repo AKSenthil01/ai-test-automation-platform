@@ -9,7 +9,7 @@ from test_generation.generate_tests_from_docs import generate
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-WORKBOOK = BASE_DIR / "generated_tests_interview_ready_50.xlsx"
+WORKBOOK = BASE_DIR / "generated_tests.xlsx"
 
 GENERATED_TEST = (
     BASE_DIR

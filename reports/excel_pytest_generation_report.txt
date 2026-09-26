@@ -1,59 +1,17 @@
 Excel -> Pytest Generation Report
 ========================================
-Workbook: generated_tests_interview_ready_50.xlsx
-Automation rows: 47
-Generated pytest tests: 24
-Skipped/unsupported: 23
+Workbook: generated_tests.xlsx
+Automation rows: 5
+Generated pytest tests: 3
+Skipped/unsupported: 2
 
 Generated capability mappings:
 ----------------------------------------
-  TC_AI_002 | a2l_alarm | set_leak_condition | Leak alarm when refrigerant concentration exceeds 25% of LFL
-  TC_AI_003 | a2l_compressor_shutdown | set_leak_condition | Immediate compressor shutdown after leak detection
-  TC_AI_004 | a2l_ventilation | set_leak_condition | Fan activation for ventilation after leak detection
-  TC_AI_005 | a2l_alarm | set_leak_condition | Alarm status activation after leak detection
-  TC_AI_006 | a2l_logging | set_leak_condition | Leak event logging in controller memory
-  TC_AI_018 | low_suction_pressure | set_low_suction_pressure | Low suction pressure protection preventing compressor damage from refrigerant loss
-  TC_AI_019 | invalid_sensor_safe_mode | invalidate_sensor | Sensor failure protection when sensor input is invalid
-  TC_AI_020 | invalid_sensor_safe_mode | invalidate_sensor | Controller entering safe mode after invalid sensor input
-  TC_AI_027 | high_discharge_temperature | set_high_discharge_temperature | High Discharge Temperature Protection causing Compressor Shutdown
-  TC_AI_028 | modbus_register_30001 | modbus_registers | Reading evaporator temperature from register 30001
-  TC_AI_029 | modbus_register_30002 | modbus_registers | Reading suction pressure from register 30002
-  TC_AI_030 | modbus_register_30003 | modbus_registers | Reading discharge temperature from register 30003
-  TC_AI_031 | modbus_register_30004 | modbus_registers | Reading compressor status from register 30004
-  TC_AI_032 | modbus_register_30004 | modbus_registers | Compressor status value 0
-  TC_AI_033 | modbus_register_30004 | modbus_registers | Compressor status value 1
-  TC_AI_034 | modbus_register_30006 | modbus_registers | Reading alarm status from register 30006
-  TC_AI_035 | modbus_register_30006 | modbus_registers | Alarm status value 0
-  TC_AI_036 | modbus_register_30006 | modbus_registers | Alarm status value 1
-  TC_AI_037 | modbus_register_30007 | modbus_registers | Reading A2L leak status from register 30007
-  TC_AI_038 | modbus_register_30007 | modbus_registers | A2L leak status value 0
-  TC_AI_039 | modbus_register_30007 | modbus_registers | A2L leak status value 1
-  TC_AI_041 | high_discharge_temperature | set_high_discharge_temperature | Compressor shuts down due to high discharge temperature
-  TC_AI_042 | low_suction_pressure | set_low_suction_pressure | Controller prevents compressor damage due to low suction pressure
-  TC_AI_044 | a2l_ventilation | set_leak_condition | Fans activate to ventilate area during A2L leak
+  TC_AI_002 | high_discharge_temperature | set_high_discharge_temperature | Controller enters high discharge temperature protection mode when temperature exceeds 120°C
+  TC_AI_003 | high_discharge_temperature | set_high_discharge_temperature | Compressor shutdown due to high discharge temperature
+  TC_AI_004 | low_suction_pressure | set_low_suction_pressure | Alarm activation due to low suction pressure
 
 Skipped/unsupported:
 ----------------------------------------
   TC_AI_001 | No approved simulator capability matches the scenario
-  TC_AI_007 | No approved simulator capability matches the scenario
-  TC_AI_008 | No approved simulator capability matches the scenario
-  TC_AI_009 | No approved simulator capability matches the scenario
-  TC_AI_010 | No approved simulator capability matches the scenario
-  TC_AI_011 | No approved simulator capability matches the scenario
-  TC_AI_012 | No approved simulator capability matches the scenario
-  TC_AI_013 | No approved simulator capability matches the scenario
-  TC_AI_014 | No approved simulator capability matches the scenario
-  TC_AI_015 | No approved simulator capability matches the scenario
-  TC_AI_016 | No approved simulator capability matches the scenario
-  TC_AI_017 | No approved simulator capability matches the scenario
-  TC_AI_021 | No approved simulator capability matches the scenario
-  TC_AI_022 | No approved simulator capability matches the scenario
-  TC_AI_023 | No approved simulator capability matches the scenario
-  TC_AI_024 | No approved simulator capability matches the scenario
-  TC_AI_025 | No approved simulator capability matches the scenario
-  TC_AI_026 | No approved simulator capability matches the scenario
-  TC_AI_040 | No approved simulator capability matches the scenario
-  TC_AI_043 | No approved simulator capability matches the scenario
-  TC_AI_045 | No approved simulator capability matches the scenario
-  TC_AI_046 | No approved simulator capability matches the scenario
-  TC_AI_047 | No approved simulator capability matches the scenario
+  TC_AI_005 | No approved simulator capability matches the scenario
