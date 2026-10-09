@@ -25,7 +25,7 @@ logs/*
 
 # OS
 .DS_Store
-Thumbs.db.venv/
+Thumbs.db
 
 # Virtual environment
 .venv/
