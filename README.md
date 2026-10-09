@@ -61,7 +61,9 @@ If the model is not already installed, run:
 
 ```powershell
 ollama pull mistral:latest
-Setup
+```
+
+## Setup
 
 Clone the repository:
 
