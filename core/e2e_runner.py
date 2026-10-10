@@ -52,7 +52,7 @@ def generate_tests_from_excel(
         generated_tests, skipped_tests = generate(
             workbook,
             output_file=generated_test,
-            report_file=report_file or REPORT_FILE,
+            report_file=report_file or (REPORT_DIR / "generation_report.txt"),
         )
 
         generated_exists = generated_test.exists()
