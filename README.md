@@ -67,36 +67,46 @@ ollama pull mistral:latest
 
 Clone the repository:
 
+```powershell
 git clone https://github.com/AKSenthil01/ai-test-automation-platform.git
 cd ai-test-automation-platform
+```
 
 Create and activate a virtual environment on Windows:
 
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
 
 Install dependencies:
 
+```powershell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
+```
 
 Ensure Ollama is running and the required model is available before using features that depend on local LLM inference.
 
-Run the Application
+## Run the Application
 
 From the project root, run:
 
+```powershell
 streamlit run ai_test_platform.py
+```
 
 Streamlit will display the local URL for opening the application in your browser.
 
-Run Automated Tests
+## Run Automated Tests
 
 Run the project test suite from the repository root:
 
+```powershell
 python -m pytest -q tests
+```
 
-Latest recorded test result: 27 passed, with one deprecation warning.
+Verified merged baseline: 26 passed, 0 failed, with one deprecation warning (Python 3.11.9, pytest 9.1.1).
 
 This result confirms that the collected tests passed in the recorded environment. It does not by itself establish that every live LLM-generation workflow produces valid results.
 
