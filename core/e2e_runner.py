@@ -26,7 +26,11 @@ EXECUTION_LOG = (
 )
 
 
-def generate_tests_from_excel() -> dict:
+def generate_tests_from_excel(
+    workbook: Path = WORKBOOK,
+    generated_test: Path = GENERATED_TEST,
+    report_file: Path | None = None,
+) -> dict:
     """
     Generate pytest tests from the validated Excel workbook.
 
@@ -34,22 +38,24 @@ def generate_tests_from_excel() -> dict:
     """
 
     try:
-        if not WORKBOOK.exists():
+        if not workbook.exists():
             return {
                 "return_code": 1,
                 "stdout": "",
                 "stderr": (
-                    f"Workbook not found: {WORKBOOK}"
+                    f"Workbook not found: {workbook}"
                 ),
                 "success": False,
                 "generated_test": False,
             }
 
         generated_tests, skipped_tests = generate(
-            WORKBOOK
+            workbook,
+            output_file=generated_test,
+            report_file=report_file or REPORT_FILE,
         )
 
-        generated_exists = GENERATED_TEST.exists()
+        generated_exists = generated_test.exists()
 
         return {
             "return_code": 0 if generated_exists else 1,
@@ -69,18 +75,21 @@ def generate_tests_from_excel() -> dict:
             "stdout": "",
             "stderr": str(exc),
             "success": False,
-            "generated_test": GENERATED_TEST.exists(),
+            "generated_test": generated_test.exists(),
             "generated_count": 0,
             "skipped_count": 0,
         }
 
 
-def execute_generated_tests() -> dict:
+def execute_generated_tests(
+    generated_test: Path = GENERATED_TEST,
+    execution_log: Path = EXECUTION_LOG,
+) -> dict:
     """
     Execute the pytest suite generated from Excel.
     """
 
-    REPORT_DIR.mkdir(
+    execution_log.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
@@ -89,7 +98,7 @@ def execute_generated_tests() -> dict:
         sys.executable,
         "-m",
         "pytest",
-        str(GENERATED_TEST),
+        str(generated_test),
         "-v",
     ]
 
@@ -106,7 +115,7 @@ def execute_generated_tests() -> dict:
         + result.stderr
     )
 
-    EXECUTION_LOG.write_text(
+    execution_log.write_text(
         output,
         encoding="utf-8",
     )
@@ -115,11 +124,16 @@ def execute_generated_tests() -> dict:
         "return_code": result.returncode,
         "output": output,
         "success": result.returncode == 0,
-        "log_file": EXECUTION_LOG,
+        "log_file": execution_log,
     }
 
 
-def run_excel_to_pytest_pipeline() -> dict:
+def run_excel_to_pytest_pipeline(
+    workbook: Path = WORKBOOK,
+    generated_test: Path = GENERATED_TEST,
+    report_file: Path | None = None,
+    execution_log: Path = EXECUTION_LOG,
+) -> dict:
     """
     Execute:
 
@@ -134,7 +148,11 @@ def run_excel_to_pytest_pipeline() -> dict:
     This pipeline intentionally does not invoke the AI failure analyzer.
     """
 
-    generation = generate_tests_from_excel()
+    generation = generate_tests_from_excel(
+        workbook=workbook,
+        generated_test=generated_test,
+        report_file=report_file,
+    )
 
     if not generation["success"]:
         return {
@@ -144,7 +162,10 @@ def run_excel_to_pytest_pipeline() -> dict:
             "execution": None,
         }
 
-    execution = execute_generated_tests()
+    execution = execute_generated_tests(
+        generated_test=generated_test,
+        execution_log=execution_log,
+    )
 
     return {
         "success": execution["success"],

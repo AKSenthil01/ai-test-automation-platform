@@ -1379,10 +1379,17 @@ def build_test_code(
 
 def generate(
     workbook: Path,
+    output_file: Path | None = None,
+    report_file: Path | None = None,
 ) -> tuple[
     list[str],
     list[tuple[str, str]],
 ]:
+
+    output_file = Path(output_file) if output_file is not None else OUTPUT_FILE
+    report_file = Path(report_file) if report_file is not None else REPORT_FILE
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    report_file.parent.mkdir(parents=True, exist_ok=True)
 
     workbook = workbook.resolve()
 
@@ -1528,16 +1535,6 @@ def generate(
     # Output directories
     # ---------------------------------------------------------------
 
-    OUTPUT_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    REPORT_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
     # ---------------------------------------------------------------
     # Generated pytest
     # ---------------------------------------------------------------
@@ -1546,7 +1543,7 @@ def generate(
         supported
     )
 
-    OUTPUT_FILE.write_text(
+    output_file.write_text(
         code,
         encoding="utf-8",
     )
@@ -1598,7 +1595,7 @@ def generate(
             "  None"
         )
 
-    REPORT_FILE.write_text(
+    report_file.write_text(
         "\n".join(report_lines)
         + "\n",
         encoding="utf-8",
@@ -1610,11 +1607,11 @@ def generate(
 
     print()
     print(
-        f"Generated: {OUTPUT_FILE}"
+        f"Generated: {output_file}"
     )
 
     print(
-        f"Report:    {REPORT_FILE}"
+        f"Report:    {report_file}"
     )
 
     print(
