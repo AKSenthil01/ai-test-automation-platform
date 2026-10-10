@@ -1,5 +1,6 @@
 langchain
 langchain-community
+langchain-core
 openai
 tiktoken
 faiss-cpu
@@ -16,3 +17,7 @@ langchain-ollama
 plotly
 langchain-text-splitters
 pytest
+requests
+sentence-transformers
+openpyxl
+langchain_huggingface

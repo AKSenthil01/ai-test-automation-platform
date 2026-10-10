@@ -11,24 +11,6 @@ def get_timestamp():
 
 
 # ---------------------------------------------
-# Defrost Logic Simulation
-# ---------------------------------------------
-def simulate_defrost():
-    logs = []
-
-    temp = random.randint(-12, -5)
-
-    logs.append(f"{get_timestamp()} | CONTROLLER | INFO | Defrost triggered at temp={temp}")
-
-    if random.random() < 0.3:
-        logs.append(f"{get_timestamp()} | CONTROLLER | ERROR | Defrost heater failure")
-    else:
-        logs.append(f"{get_timestamp()} | CONTROLLER | INFO | Defrost completed successfully")
-
-    return logs
-
-
-# ---------------------------------------------
 # A2L Leak Detection Simulation
 # ---------------------------------------------
 def simulate_a2l():
@@ -59,7 +41,7 @@ def simulate_controller():
     if temp > 5:
         logs.append(f"{get_timestamp()} | CONTROLLER | INFO | Compressor ON")
     elif temp < -8:
-        logs.append(f"{get_timestamp()} | CONTROLLER | INFO | Defrost cycle initiated")
+        logs.append(f"{get_timestamp()} | CONTROLLER | INFO | System stable")
     else:
         logs.append(f"{get_timestamp()} | CONTROLLER | INFO | System stable")
 
@@ -102,9 +84,9 @@ def simulate_bacnet():
 def generate_logs_fast():
     logs = []
 
-    for i in range(50):   # 🔥 reduce size (was 500+ maybe)
+    for i in range(50):   # ðŸ”¥ reduce size (was 500+ maybe)
 
-        logs.append(f"{i} | CONTROLLER | INFO | Defrost active at temp=-10")
+        logs.append(f"{i} | CONTROLLER | INFO | System monitoring active")
         logs.append(f"{i} | MODBUS | INFO | Read register {i} SUCCESS")
         logs.append(f"{i} | BACNET | INFO | AV ReadProperty SUCCESS")
 
